@@ -40,12 +40,35 @@
     <script>
       const toggleButton = document.querySelector('.menu-toggle');
       const navMenu = document.querySelector('.nav-menu');
-      let redirected = false;
+      const currentPage = document.body.dataset.page;
+      const nextPageMap = {
+        landing: 'whoami.html',
+        whoami: 'blog.html',
+        blog: 'projects.html'
+      };
 
       toggleButton.addEventListener('click', () => {
         const isOpen = navMenu.classList.toggle('open');
         toggleButton.setAttribute('aria-expanded', String(isOpen));
       });
+
+      const nextPage = nextPageMap[currentPage];
+      if (nextPage) {
+        let redirected = false;
+
+        const maybeRedirect = () => {
+          if (redirected) return;
+
+          const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
+          if (atBottom) {
+            redirected = true;
+            window.location.href = nextPage;
+          }
+        };
+
+        window.addEventListener('scroll', maybeRedirect, { passive: true });
+        window.addEventListener('wheel', maybeRedirect, { passive: true });
+      }
     </script>
   </body>
 </html>

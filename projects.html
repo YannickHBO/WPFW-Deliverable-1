@@ -58,6 +58,21 @@
         const isOpen = navMenu.classList.toggle('open');
         toggleButton.setAttribute('aria-expanded', String(isOpen));
       });
+
+      let redirected = false;
+
+      const maybeRedirect = () => {
+        if (redirected) return;
+
+        const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
+        if (atBottom) {
+          redirected = true;
+          window.location.href = 'index.html';
+        }
+      };
+
+      window.addEventListener('scroll', maybeRedirect, { passive: true });
+      window.addEventListener('wheel', maybeRedirect, { passive: true });
     </script>
   </body>
 </html>
