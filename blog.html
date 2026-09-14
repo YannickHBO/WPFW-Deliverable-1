@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="blog" class="page-blog">
+    <a href="landing.html" class="brand-tag" aria-label="Go to the landing page">WPFWDesigns</a>
+
+    <nav class="top-nav" aria-label="Main navigation">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+      <ul class="nav-menu" id="site-nav-menu">
+        <li><a href="whoami.html">Whoami</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </nav>
+
+    <main class="page-content card-page">
+      <h1>Blog</h1>
+
+      <div class="card-grid">
+        <article class="content-card">
+          <p class="card-date">January 12, 2026</p>
+          <h2>Blog Post 1</h2>
+          <p>Here you will find a description of the site; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </article>
+
+        <article class="content-card">
+          <p class="card-date">February 5, 2026</p>
+          <h2>Blog Post 2</h2>
+          <p>Pellentesque a nisl lacus. Pellentesque scelerisque finibus interdum. Mauris consectetur lectus vitae urna vestibulum.</p>
+        </article>
+
+        <article class="content-card">
+          <p class="card-date">March 18, 2026</p>
+          <h2>Blog Post 3</h2>
+          <p>Nunc sed nisl ac ex dignissim aliquam. Duis lorem magna, mattis non placerat ac, iaculis vestibulum velit.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 WPFWDesigns. All rights reserved.</p>
+    </footer>
+
+    <script>
+      const toggleButton = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      let redirected = false;
+
+      toggleButton.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        toggleButton.setAttribute('aria-expanded', String(isOpen));
+      });
+    </script>
+  </body>
+</html>

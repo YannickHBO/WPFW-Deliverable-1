@@ -1,0 +1,263 @@
+﻿* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #3360a0;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.page-landing {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 35%, #f5f3ff 100%);
+}
+
+.page-whoami {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 35%, #f0fdf4 100%);
+}
+
+.page-blog {
+  background: linear-gradient(135deg, #ffedd5 0%, #fed7aa 35%, #fff7ed 100%);
+}
+
+.page-projects {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 35%, #eff6ff 100%);
+}
+
+.page-content {
+  max-width: 760px;
+  margin: 80px auto 0;
+  padding: 0 24px;
+  flex: 1;
+}
+
+.profile-page {
+  max-width: 980px;
+}
+
+.profile-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  text-align: left;
+}
+
+.profile-placeholder {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  border-radius: 18px;
+  background: #e5e7eb;
+  border: 1px solid #d1d5db;
+  margin-top: 24px;
+  margin-left: -30px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.profile-placeholder::before {
+  content: "";
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  border: 5px solid #c7ccd5;
+  border-radius: 50%;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profile-placeholder::after {
+  content: "";
+  position: absolute;
+  width: 98px;
+  height: 70px;
+  border: 5px solid #c7ccd5;
+  border-top: none;
+  border-radius: 48% 48% 16% 16%;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.profile-copy {
+  flex: 1;
+  padding-top: 22px;
+}
+
+.profile-copy h1 {
+  margin-bottom: 14px;
+}
+
+.card-page {
+  max-width: 1080px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.content-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 22px 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  text-align: left;
+}
+
+.content-card h2 {
+  margin: 10px 0 12px;
+  color: #3360a0;
+  font-size: 1.25rem;
+}
+
+.content-card p {
+  margin: 0;
+  color: #3360a0;
+}
+
+.card-date {
+  margin: 0;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.site-footer {
+  width: 100%;
+  padding: 14px 20px 18px;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+  margin-top: 0;
+  color: #3360a0;
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+}
+
+.brand-tag {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+  background: #111827;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.top-nav {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 9998;
+}
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #111827;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+.nav-menu {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 150px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.nav-menu.open {
+  display: flex;
+}
+
+.menu-toggle:focus-visible,
+.top-nav a:focus-visible {
+  outline: 3px solid #3360a0;
+  outline-offset: 3px;
+}
+
+.top-nav a {
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s ease;
+}
+
+.top-nav a:hover,
+.top-nav a:focus {
+  opacity: 0.75;
+}
