@@ -5,14 +5,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
-    overscroll-behavior-x: none;
     overscroll-behavior-y: contain;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar {
-    display: none;
 }
 
 body {
@@ -69,7 +62,6 @@ body {
 
 .page-landing .page-content {
     margin-top: 120px;
-    min-height: 130vh;
 }
 
 .profile-page {
@@ -83,42 +75,16 @@ body {
     text-align: left;
 }
 
-.profile-placeholder {
-    position: relative;
+.profile-image {
     width: 170px;
     height: 170px;
-    border-radius: 18px;
-    background: #e5e7eb;
-    border: 1px solid #d1d5db;
+    object-fit: contain;
     margin-top: 24px;
     margin-left: -30px;
     flex-shrink: 0;
-    overflow: hidden;
-}
-
-.profile-placeholder::before {
-    content: "";
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    border: 5px solid #c7ccd5;
-    border-radius: 50%;
-    top: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.profile-placeholder::after {
-    content: "";
-    position: absolute;
-    width: 98px;
-    height: 70px;
-    border: 5px solid #c7ccd5;
-    border-top: none;
-    border-radius: 48% 48% 16% 16%;
-    bottom: 22px;
-    left: 50%;
-    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .profile-copy {
@@ -207,11 +173,6 @@ p {
     color: #3360a0;
 }
 
-.container {
-    width: min(1100px, 90%);
-    margin: 0 auto;
-}
-
 .brand-tag {
     font-family: Comic Sans MS, Comic Sans, cursive;
     position: fixed;
@@ -272,6 +233,12 @@ p {
     opacity: 0.75;
 }
 
+@media (max-width: 900px) {
+    .profile-image {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 700px) {
     html,
     body {
@@ -279,8 +246,6 @@ p {
     }
 
     .page-content {
-        width: 100%;
-        max-width: 100%;
         padding: 0 16px;
     }
 
@@ -290,8 +255,7 @@ p {
         gap: 20px;
     }
 
-    .profile-placeholder {
-        margin-left: 0;
+    .profile-image {
         width: 140px;
         height: 140px;
     }
@@ -302,10 +266,6 @@ p {
 
     .card-grid {
         grid-template-columns: 1fr;
-    }
-
-    .container {
-        width: 100%;
     }
 
     .brand-tag {
