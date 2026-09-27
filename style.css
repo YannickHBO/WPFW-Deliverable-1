@@ -54,7 +54,7 @@ body {
 
 .page-content {
     max-width: 760px;
-    min-height: 130vh;
+    min-height: 0vh;
     margin: 80px auto 0;
     padding: 0 24px 80px;
     flex: 1;
