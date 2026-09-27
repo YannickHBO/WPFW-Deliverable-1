@@ -43,40 +43,6 @@ body {
     }
 }
 
-.scroll-cue {
-    position: fixed;
-    left: 50%;
-    bottom: 72px;
-    transform: translateX(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid rgba(17, 24, 39, 0.18);
-    background: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.12);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #111827;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.25s ease, visibility 0.25s ease;
-    z-index: 9997;
-    backdrop-filter: blur(3px);
-}
-
-.scroll-cue.visible {
-    opacity: 0.82;
-    visibility: visible;
-}
-
-.scroll-cue::before {
-    content: "↓";
-    font-size: 20px;
-    line-height: 1;
-    transform: translateY(-1px);
-}
-
 .page-landing {
     background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 35%, #faf5ff 100%);
 }
@@ -274,50 +240,19 @@ p {
     z-index: 9998;
 }
 
-.menu-toggle {
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 50%;
-    background: #111827;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.menu-toggle span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    background: #ffffff;
-    border-radius: 2px;
-}
-
 .nav-menu {
-    position: absolute;
-    top: 52px;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    min-width: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
     list-style: none;
     margin: 0;
-    padding: 12px 14px;
-    background: #efededf5;
-    border-radius: 12px;
+    padding: 8px 12px;
+    background: rgba(239, 237, 237, 0.9);
+    border-radius: 999px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-.nav-menu.open {
-    display: flex;
-}
-
-.menu-toggle:focus-visible,
 .top-nav a:focus-visible {
     outline: 3px solid #3360a0;
     outline-offset: 3px;

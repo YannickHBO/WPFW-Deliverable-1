@@ -10,11 +10,6 @@
     <a href="index.html" class="brand-tag" aria-label="Go to the home page"><i>WPFWDesigns</i></a>
 
     <nav class="top-nav" aria-label="Main navigation">
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav-menu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </button>
       <ul class="nav-menu" id="site-nav-menu">
         <li><a href="whoami.html">Whoami</a></li>
         <li><a href="blog.html">Blog</a></li>
@@ -50,46 +45,5 @@
       <p>© 2026 WPFWDesigns. All rights reserved.</p>
     </footer>
 
-    <div class="scroll-cue" aria-hidden="true"></div>
-
-    <script>
-      const toggleButton = document.querySelector('.menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      const scrollCue = document.querySelector('.scroll-cue');
-      const nextPage = 'index.html';
-      let redirected = false;
-      let cueShown = false;
-
-      toggleButton.addEventListener('click', () => {
-        const isOpen = navMenu.classList.toggle('open');
-        toggleButton.setAttribute('aria-expanded', String(isOpen));
-      });
-
-      const updateCue = () => {
-        const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
-        const cueVisible = maxScroll <= 0 || window.scrollY >= maxScroll * 0.2;
-        scrollCue.classList.toggle('visible', cueVisible);
-        cueShown = cueVisible;
-      };
-
-      const maybeRedirect = () => {
-        if (redirected) return;
-
-        const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 0);
-        if (maxScroll <= 0) return;
-
-        if (window.scrollY >= maxScroll * 0.5) {
-          redirected = true;
-          scrollCue.classList.remove('visible');
-          window.location.href = nextPage;
-        }
-      };
-
-      updateCue();
-      window.addEventListener('scroll', () => {
-        updateCue();
-        maybeRedirect();
-      }, { passive: true });
-    </script>
   </body>
 </html>
